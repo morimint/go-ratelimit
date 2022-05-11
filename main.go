@@ -32,7 +32,7 @@ func (conn *APIConnection) ResolveAddress(ctx context.Context) error {
 
 func Open() *APIConnection {
 	return &APIConnection{
-		rateLimiter: rate.NewLimiter(rate.Limit(1), 1),
+		rateLimiter: rate.NewLimiter(rate.Limit(100), 1),
 	}
 }
 
